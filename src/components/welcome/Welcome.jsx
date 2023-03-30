@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography, Fab, Button, Container } from "@mui/material";
 import logo from "../../icons/logo.svg";
-import Skills from "../skills/Skills.jsx";
-import Projects from "../projects/Projects.jsx";
-import Contact from "../contact/Contact.jsx";
+import groupProject from "../../icons/groups.png";
+import spotify from "../../icons/spotify.png";
+import linked from "../../icons/linked.png";
+import weather from "../../icons/weather.png";
+
 import { Link, Element } from "react-scroll";
 import { skillsLogo } from "../skills/items.js";
 import Grid from "@mui/material/Grid";
@@ -11,23 +13,52 @@ import linkedIn from "../../icons/linkedin.svg";
 import github from "../../icons/github.svg";
 
 function Welcome() {
-  return (
-    <>
-      <Box>
-        <Link to="welcome" smooth={true} duration={800}>
-          Section 1
-        </Link>
-        <Link to="skills" smooth={true} duration={800}>
-          Section 2
-        </Link>
-        <Link to="projects" smooth={true} duration={800}>
-          Section 3
-        </Link>
-        <Link to="contact" smooth={true} duration={800}>
-          Section 3
-        </Link>
-      </Box>
+  const [activeLink, setActiveLink] = useState("");
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPos = window.scrollY;
+      const sections = ["welcome", "skills", "projects", "contact"];
+      const sectionOffsets = sections.map((section) => {
+        const element = document.getElementById(section);
+        return {
+          id: section,
+          offset: element.offsetTop,
+          height: element.offsetHeight,
+        };
+      });
 
+      const currentSection = sectionOffsets.find(({ offset, height }) => currentPos >= offset - height / 2 && currentPos < offset + height / 2);
+
+      if (currentSection) {
+        setActiveLink(currentSection.id);
+      } else {
+        setActiveLink("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <Box sx={{ position: "relative" }}>
+      <Fab variant="extended" sx={{ position: "sticky", top: "0px", cursor: "pointer", backgroundColor: "#E6DFD3" }}>
+        <Link to="welcome" smooth={true} duration={1000} spy={true}>
+          Welcome
+        </Link>
+        <Link to="skills" smooth={true} duration={1000} spy={true} className={activeLink === "skills" ? "active" : ""}>
+          Skills
+        </Link>
+        <Link to="projects" smooth={true} duration={1000} spy={true} className={activeLink === "projects" ? "active" : ""}>
+          Projects
+        </Link>
+        <Link to="contact" smooth={true} duration={1000} spy={true} className={activeLink === "contact" ? "active" : ""}>
+          Contact
+        </Link>
+      </Fab>
       <Element name="welcome">
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100vh", backgroundColor: "#E6DFD3" }} id="welcome">
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginBlock: "150px" }}>
@@ -40,8 +71,8 @@ function Welcome() {
               </Typography>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", fontFamily: "Nunito, sans-serif" }}>
-              <Typography sx={{ fontFamily: "Inter Tight, sans-serif", fontSize: "6em", textAlign: "center", lineHeight: "100px", color: "#9E3F0D", fontWeight: "700" }}>Welcome,</Typography>
-              <Typography sx={{ fontFamily: "Inter Tight, sans-serif", fontSize: "3em", textAlign: "center", color: "#9E3F0D", fontWeight: "100" }}>
+              <Typography sx={{ fontFamily: "Inter Tight, sans-serif", fontSize: "6em", textAlign: "center", lineHeight: "100px", color: "#000", fontWeight: "700" }}>Welcome,</Typography>
+              <Typography sx={{ fontFamily: "Inter Tight, sans-serif", fontSize: "3em", textAlign: "center", color: "#000", fontWeight: "100" }}>
                 I am <span className="italic">Leon_</span> Designer and Full Stack Developer!
               </Typography>
             </Box>
@@ -63,28 +94,91 @@ function Welcome() {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#F6EFD3" }} id="projects">
           <Container maxWidth="lg">
             <Grid container>
-              <Grid item xs={4} sx={{ height: "350px" }}>
-                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%" }}></Box>
+              <Grid item xs={6} sx={{ height: "350px" }}>
+                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
+                  <Button sx={{ width: "100%", height: "100%" }}>
+                    <img src={groupProject} alt="" className="images-big" />
+                  </Button>
+                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      component="a"
+                      href="https://solid-groups.vercel.app/"
+                      sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}
+                    >
+                      Solid Groups
+                    </Button>
+                  </Box>
+                  <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
+                    <Button
+                      component="a"
+                      href="https://github.com/LeonMagnificat/Solid-FE"
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      sx={{ backgroundColor: "#000", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}
+                    >
+                      Repo
+                    </Button>
+                  </Box>
+                </Box>
               </Grid>
-              <Grid item xs={4} sx={{ height: "350px" }}>
-                <Box sx={{ backgroundColor: "#E8E8E8", width: "100%", height: "100%" }}></Box>
+              <Grid item xs={6} sx={{ height: "350px" }}>
+                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
+                  <Button sx={{ width: "100%", height: "100%" }}>
+                    <img src={spotify} alt="" className="images-big" />
+                  </Button>
+                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                    <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}>
+                      Spotify Clone
+                    </Button>
+                  </Box>
+                  <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
+                    <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#1e1e1e", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
+                      Repo
+                    </Button>
+                  </Box>
+                </Box>
               </Grid>
-              <Grid item xs={4} sx={{ height: "350px" }}>
-                <Box sx={{ backgroundColor: "#D9D4D4", width: "100%", height: "100%" }}></Box>
+              <Grid item xs={6} sx={{ height: "350px" }}>
+                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
+                  <Button sx={{ width: "100%", height: "100%" }}>
+                    <img src={linked} alt="" className="images-big" />
+                  </Button>
+                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                    <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".8" }}>
+                      LinkedIn Clone
+                    </Button>
+                  </Box>
+                  <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
+                    <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#333", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
+                      Repo
+                    </Button>
+                  </Box>
+                </Box>
               </Grid>
-              <Grid item xs={4} sx={{ height: "350px" }}>
-                <Box sx={{ backgroundColor: "#E8E8E8", width: "100%", height: "100%" }}></Box>
-              </Grid>
-              <Grid item xs={4} sx={{ height: "350px" }}>
-                <Box sx={{ backgroundColor: "#D9D4D4", width: "100%", height: "100%" }}></Box>
-              </Grid>
-              <Grid item xs={4} sx={{ height: "350px" }}>
-                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%" }}></Box>
+              <Grid item xs={6} sx={{ height: "350px" }}>
+                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
+                  <Button sx={{ width: "100%", height: "100%" }}>
+                    <img src={weather} alt="" className="images-big" />
+                  </Button>
+                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                    <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}>
+                      Weather App
+                    </Button>
+                  </Box>
+                  <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
+                    <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#000", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
+                      Repo
+                    </Button>
+                  </Box>
+                </Box>
               </Grid>
             </Grid>
           </Container>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#E6DFD3", position: "relative" }} id="contact">
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#E6DFD3" }} id="contact">
           <Container maxWidth="lg">
             <Grid container>
               <Grid item xs={6} sx={{ height: "350px" }}>
@@ -114,15 +208,8 @@ function Welcome() {
             </Grid>
           </Container>
         </Box>
-        <Box sx={{ border: "solid", backgroundColor: "green", height: "160px" }}>
-          <Fab sx={{ position: "absolute", backgroundColor: "green" }}>
-            <Link to="welcome" smooth={true} duration={800}>
-              <Button>Section 1</Button>
-            </Link>
-          </Fab>
-        </Box>
       </Element>
-    </>
+    </Box>
   );
 }
 

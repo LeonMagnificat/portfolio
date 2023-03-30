@@ -2,3 +2,38 @@
   font-style: italic;
   font-weight: 600;
 }
+
+.MuiFab-root {
+  background-color: #e6dfd3 !important;
+  box-shadow: none !important;
+  /* text-transform: capitalize !important; */
+  /* border: solid !important; */
+  border-radius: 0 !important;
+  width: 100% !important;
+  display: flex;
+  /* flex-direction: column; */
+  text-align: left;
+  justify-content: space-around !important;
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 100 !important;
+  font-size: 0.7rem !important;
+}
+
+.MuiFab-primary {
+  color: blueviolet;
+}
+
+.images-big {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .active {
+  color: #9e3f0d;
+  font-weight: 700;
+
+  font-family: Bentham, serif;
+} */
