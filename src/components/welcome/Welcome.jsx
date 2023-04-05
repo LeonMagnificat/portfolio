@@ -95,7 +95,7 @@ function Welcome() {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="projects">
           <Container maxWidth="lg">
             <Grid container>
-              <Grid item xs={6} sx={{ height: "350px" }}>
+              <Grid item xs={12} md={6} sx={{ height: "350px" }}>
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={groupProject} alt="" className="images-big" />
@@ -125,7 +125,7 @@ function Welcome() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={6} sx={{ height: "350px" }}>
+              <Grid item xs={12} md={6} sx={{ height: "350px" }}>
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={spotify} alt="" className="images-big" />
@@ -142,7 +142,7 @@ function Welcome() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={6} sx={{ height: "350px" }}>
+              <Grid item xs={12} md={6} sx={{ height: "350px" }}>
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={linked} alt="" className="images-big" />
@@ -159,7 +159,7 @@ function Welcome() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={6} sx={{ height: "350px" }}>
+              <Grid item xs={12} md={6} sx={{ height: "350px" }}>
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={calculator} alt="" className="images-big" />
