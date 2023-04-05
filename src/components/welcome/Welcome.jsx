@@ -5,6 +5,7 @@ import groupProject from "../../icons/groups.png";
 import spotify from "../../icons/spotify.png";
 import linked from "../../icons/linked.png";
 import weather from "../../icons/weather.png";
+import calculator from "../../icons/calculator.png";
 
 import { Link, Element } from "react-scroll";
 import { skillsLogo } from "../skills/items.js";
@@ -45,7 +46,7 @@ function Welcome() {
 
   return (
     <Box sx={{ position: "relative" }}>
-      <Fab variant="extended" sx={{ position: "sticky", top: "0px", cursor: "pointer", backgroundColor: "#E6DFD3" }}>
+      <Fab variant="extended" sx={{ position: "sticky", top: "0px", cursor: "pointer", backgroundColor: "#FFF9EE" }}>
         <Link to="welcome" smooth={true} duration={1000} spy={true}>
           Welcome
         </Link>
@@ -60,7 +61,7 @@ function Welcome() {
         </Link>
       </Fab>
       <Element name="welcome">
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100vh", backgroundColor: "#E6DFD3" }} id="welcome">
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="welcome">
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginBlock: "150px" }}>
             <Box>
               <img src={logo} alt="" />
@@ -78,7 +79,7 @@ function Welcome() {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#F6DFD3" }} id="skills">
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="skills">
           <Container maxWidth="lg">
             <Grid container rowSpacing={10} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               {skillsLogo.map((skill) => (
@@ -91,7 +92,7 @@ function Welcome() {
             </Grid>
           </Container>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#F6EFD3" }} id="projects">
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="projects">
           <Container maxWidth="lg">
             <Grid container>
               <Grid item xs={6} sx={{ height: "350px" }}>
@@ -129,11 +130,11 @@ function Welcome() {
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={spotify} alt="" className="images-big" />
                   </Button>
-                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                  {/* <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
                     <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}>
                       Spotify Clone
                     </Button>
-                  </Box>
+                  </Box> */}
                   <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
                     <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#1e1e1e", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
                       Repo
@@ -146,11 +147,11 @@ function Welcome() {
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={linked} alt="" className="images-big" />
                   </Button>
-                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                  {/* <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
                     <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".8" }}>
                       LinkedIn Clone
                     </Button>
-                  </Box>
+                  </Box> */}
                   <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
                     <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#333", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
                       Repo
@@ -161,15 +162,60 @@ function Welcome() {
               <Grid item xs={6} sx={{ height: "350px" }}>
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
+                    <img src={calculator} alt="" className="images-big" />
+                  </Button>
+                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="orange"
+                      sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}
+                      component="a"
+                      href="https://calculator-kleongreen.vercel.app/"
+                    >
+                      Calculator UI
+                    </Button>
+                  </Box>
+                  <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      sx={{ backgroundColor: "#000", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}
+                      component="a"
+                      href="https://github.com/LeonMagnificat/Calculator"
+                    >
+                      Repo
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sx={{ height: "350px" }}>
+                <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
+                  <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={weather} alt="" className="images-big" />
                   </Button>
                   <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
-                    <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="orange"
+                      sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}
+                      component="a"
+                      href="https://weather-app-kleongreen.vercel.app/"
+                    >
                       Weather App
                     </Button>
                   </Box>
                   <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
-                    <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#000", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      sx={{ backgroundColor: "#000", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}
+                      component="a"
+                      href="https://github.com/LeonMagnificat/Weather-App"
+                    >
                       Repo
                     </Button>
                   </Box>
@@ -178,7 +224,7 @@ function Welcome() {
             </Grid>
           </Container>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#E6DFD3" }} id="contact">
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="contact">
           <Container maxWidth="lg">
             <Grid container>
               <Grid item xs={6} sx={{ height: "350px" }}>
