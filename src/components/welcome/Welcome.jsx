@@ -147,11 +147,18 @@ function Welcome() {
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={linked} alt="" className="images-big" />
                   </Button>
-                  {/* <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
-                    <Button fullWidth variant="contained" color="orange" sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".8" }}>
+                  <Box sx={{ position: "absolute", bottom: "50px", width: "100%" }}>
+                    <Button
+                      component="a"
+                      href="https://linked-in-front.vercel.app/"
+                      fullWidth
+                      variant="contained"
+                      color="orange"
+                      sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".8" }}
+                    >
                       LinkedIn Clone
                     </Button>
-                  </Box> */}
+                  </Box>
                   <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
                     <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#333", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
                       Repo
