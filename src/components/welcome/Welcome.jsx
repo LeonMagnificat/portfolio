@@ -95,7 +95,7 @@ function Welcome() {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="projects">
           <Container maxWidth="lg">
             <Grid container>
-              <Grid item xs={12} md={6} sx={{ height: "350px" }}>
+              <Grid item xs={12} md={6} sx={{ height: "350px" }} component="a" href="https://solid-groups.vercel.app/">
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={groupProject} alt="" className="images-big" />
@@ -108,7 +108,7 @@ function Welcome() {
                       href="https://solid-groups.vercel.app/"
                       sx={{ backgroundColor: "#000", boxShadow: "none", borderRadius: "0", height: "50px", color: "#fff", opacity: ".6" }}
                     >
-                      Solid Groups
+                      Visit Solid Groups
                     </Button>
                   </Box>
                   <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
@@ -136,7 +136,14 @@ function Welcome() {
                     </Button>
                   </Box> */}
                   <Box sx={{ position: "absolute", bottom: "0", width: "100%" }}>
-                    <Button fullWidth variant="contained" color="primary" sx={{ backgroundColor: "#1e1e1e", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      sx={{ backgroundColor: "#1e1e1e", color: "#fff", boxShadow: "none", borderRadius: "0", height: "50px" }}
+                      component="a"
+                      href="https://github.com/LeonMagnificat/Spotify"
+                    >
                       Repo
                     </Button>
                   </Box>
@@ -166,7 +173,7 @@ function Welcome() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6} sx={{ height: "350px" }}>
+              {/* <Grid item xs={12} md={6} sx={{ height: "350px" }}>
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={calculator} alt="" className="images-big" />
@@ -196,8 +203,8 @@ function Welcome() {
                     </Button>
                   </Box>
                 </Box>
-              </Grid>
-              <Grid item xs={12} sx={{ height: "350px" }}>
+              </Grid> */}
+              <Grid item xs={12} md={6} sx={{ height: "350px" }} component="a" href="https://weather-app-kleongreen.vercel.app/">
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
                     <img src={weather} alt="" className="images-big" />
