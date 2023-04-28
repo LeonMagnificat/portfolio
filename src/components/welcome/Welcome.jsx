@@ -61,30 +61,93 @@ function Welcome() {
         </Link>
       </Fab>
       <Element name="welcome">
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="welcome">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            height: "100vh",
+            backgroundColor: "#FFF9EE",
+            "@media screen and (max-width: 700px)": {
+              height: "",
+            },
+          }}
+          id="welcome"
+        >
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", marginBlock: "150px" }}>
             <Box>
               <img src={logo} alt="" />
             </Box>
             <Box sx={{ width: "300px" }}>
-              <Typography sx={{ fontFamily: "Bentham, serif", fontSize: "1.5em", textAlign: "center", lineHeight: "25px", color: "#9E3F0D", marginBlock: "150px" }}>
+              <Typography
+                sx={{
+                  fontFamily: "Bentham, serif",
+                  fontSize: "1.5em",
+                  textAlign: "center",
+                  lineHeight: "25px",
+                  color: "#9E3F0D",
+                  marginBlock: "150px",
+                  "@media screen and (max-width: 700px)": {
+                    fontSize: "0.8em",
+                    marginBlock: "20px",
+                  },
+                }}
+              >
                 "Designing with flair, Developing with skill”
               </Typography>
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", fontFamily: "Nunito, sans-serif" }}>
-              <Typography sx={{ fontFamily: "Inter Tight, sans-serif", fontSize: "6em", textAlign: "center", lineHeight: "100px", color: "#000", fontWeight: "700" }}>Welcome,</Typography>
-              <Typography sx={{ fontFamily: "Inter Tight, sans-serif", fontSize: "3em", textAlign: "center", color: "#000", fontWeight: "100" }}>
+              <Typography
+                sx={{
+                  fontFamily: "Inter Tight, sans-serif",
+                  fontSize: "6em",
+                  textAlign: "center",
+                  lineHeight: "100px",
+                  color: "#000",
+                  fontWeight: "700",
+                  "@media screen and (max-width: 700px)": {
+                    fontSize: "0.8em",
+                  },
+                }}
+              >
+                Welcome,
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Inter Tight, sans-serif",
+                  fontSize: "3em",
+                  textAlign: "center",
+                  color: "#000",
+                  fontWeight: "100",
+                  "@media screen and (max-width: 700px)": {
+                    fontSize: "0.8em",
+                  },
+                }}
+              >
                 I am <span className="italic">Leon_</span> Designer and Full Stack Developer!
               </Typography>
             </Box>
           </Box>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="skills">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            backgroundColor: "#FFF9EE",
+            "@media screen and (max-width: 700px)": {
+              height: "50vh",
+            },
+          }}
+          id="skills"
+        >
           <Container maxWidth="lg">
-            <Grid container rowSpacing={10} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid container rowSpacing={{ xs: 1, sm: 2, md: 3 }} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               {skillsLogo.map((skill) => (
-                <Grid item xs={2}>
-                  <img src={skill.icon} sx={{ minWidth: "40px" }} alt="" />
+                <Grid item xs={3}>
+                  <img src={skill.icon} sx={{ minWidth: "10px" }} alt="" />
                   {/* <Box sx={{ width: "100%", border: "solid 0.1px #B9B9B9", marginBlock: "10px" }}></Box> */}
                   <Typography sx={{ fontSize: "16px", fontFamily: "nunito", textTransform: "capitalize", marginBlockStart: "20px" }}>{skill.name}</Typography>
                 </Grid>
@@ -92,9 +155,23 @@ function Welcome() {
             </Grid>
           </Container>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="projects">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            backgroundColor: "#FFF9EE",
+            "@media screen and (max-width: 700px)": {
+              height: "",
+              marginBlockStart: "70px",
+            },
+          }}
+          id="projects"
+        >
           <Container maxWidth="lg">
-            <Grid container>
+            <Grid container rowSpacing={{ xs: 1, sm: 2, md: 1 }} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
               <Grid item xs={12} md={6} sx={{ height: "350px" }} component="a" href="https://solid-groups.vercel.app/">
                 <Box sx={{ backgroundColor: "#F1F1F1", width: "100%", height: "100%", position: "relative" }}>
                   <Button sx={{ width: "100%", height: "100%" }}>
@@ -238,7 +315,21 @@ function Welcome() {
             </Grid>
           </Container>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", backgroundColor: "#FFF9EE" }} id="contact">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            backgroundColor: "#FFF9EE",
+            "@media screen and (max-width: 700px)": {
+              height: "",
+              marginBlockStart: "20px",
+            },
+          }}
+          id="contact"
+        >
           <Container maxWidth="lg">
             <Grid container>
               <Grid item xs={6} sx={{ height: "350px" }}>
@@ -252,7 +343,19 @@ function Welcome() {
                     </Button>
                   </Box>
                   <Box>
-                    <Typography sx={{ fontFamily: "Nunito", fontSize: "24px", fontWeight: "600" }}>Leon Magnificat Kwizera</Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "Nunito",
+                        fontSize: "24px",
+                        fontWeight: "600",
+                        "@media screen and (max-width: 700px)": {
+                          fontSize: "20px",
+                          width: "600px",
+                        },
+                      }}
+                    >
+                      Leon Magnificat Kwizera
+                    </Typography>
                   </Box>
                   <Box>
                     <Typography sx={{ fontFamily: "Nunito", fontSize: "18px", fontWeight: "600" }}>Poland, Sopot</Typography>

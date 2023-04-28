@@ -31,6 +31,13 @@
   object-fit: cover;
 }
 
+.tag-line {
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 100 !important;
+  font-size: 0.7rem !important;
+  color: #9e3f0d;
+}
+
 /* .active {
   color: #9e3f0d;
   font-weight: 700;
