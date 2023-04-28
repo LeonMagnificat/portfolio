@@ -165,7 +165,7 @@ function Welcome() {
             backgroundColor: "#FFF9EE",
             "@media screen and (max-width: 700px)": {
               height: "",
-              marginBlockStart: "70px",
+              marginBlockStart: "170px",
             },
           }}
           id="projects"
@@ -325,7 +325,6 @@ function Welcome() {
             backgroundColor: "#FFF9EE",
             "@media screen and (max-width: 700px)": {
               height: "",
-              marginBlockStart: "20px",
             },
           }}
           id="contact"
